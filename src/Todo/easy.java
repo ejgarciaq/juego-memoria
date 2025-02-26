@@ -14,7 +14,7 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Edson Garcia Quiros
+ * @author Edson j. Garcia Quiros
  */
 
 public class easy extends javax.swing.JPanel {
@@ -56,21 +56,33 @@ int seg;
         btnC16.setDisabledIcon(new ImageIcon(getClass().getResource("/img/"+numeros[15]+".png")));
     }
     
-    //metodo para voltear cartas
+    //Método para voltear cartas
     private void btnEnabled(JButton btn){
+        // Si ninguna carta está volteada
         if(!caraArriba){
+            // Deshabilitar el botón
             btn.setEnabled(false);
+            // Obtener la imagen del icono deshabilitado
             img1 = (ImageIcon) btn.getDisabledIcon();
+            // Guardar el botón en el primer índice del array
             pbtn [0] = btn;
+            // Marcar que hay una carta volteada
             caraArriba = true;
+            // No se ha seleccionado una segunda carta
             segunCar = false;
         }
-        else{
+        else{// Si ya hay una carta volteada
+             // Deshabilitar el botón
             btn.setEnabled(false);
+            // Obtener la imagen del icono deshabilitado 
             img2 = (ImageIcon) btn.getDisabledIcon();
+            // Guardar el botón en el segundo índice del array
             pbtn[1] = btn;
+             // Marcar que hay una segunda carta volteada
             segunCar = true;
+             // Aumentar puntos en 2
             puntos += 2;
+             // Comprobar si se ha ganado la partida
             pregwin();
         }
     }
