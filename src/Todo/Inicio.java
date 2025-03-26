@@ -1,5 +1,5 @@
 package Todo;
-
+// Importa librerías necesarias para manipulación de interfaz gráfica
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
@@ -11,44 +11,52 @@ import javax.swing.JFrame;
 
 public class Inicio extends javax.swing.JFrame {
  
-    
+    // Constructor de la clase Inicio
     public Inicio() {
+        // Inicializa los componentes gráficos de la ventana
         initComponents();
+        // Configura el título de la ventana
         this.setTitle("Encuéntralo");
+        // Establece la ventana en el centro de la pantalla
         this.setLocationRelativeTo(null);
+        // Bloquea la posibilidad de cambiar el tamaño de la ventana
         this.setResizable(false);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// evita ejecucion en segundo plano
-        this.setLayout(null);//permite colocar otros objetos donde queramos
+        // Configura la acción al cerrar la ventana (terminar ejecución) evita ejecucion en segundo plano
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //permite colocar otros objetos donde queramos
+        this.setLayout(null);
+        // Carga el ícono de la aplicación desde los recursos
         Image ico = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/icon.png"));
         this.setIconImage(ico);
     }
-
+    // Método estático para configurar el nivel fácil
     static void nivelFacil() {
-        easy p = new easy();
-        PanelPricipal.removeAll();
-        PanelPricipal.add(p, BorderLayout.CENTER);
-        PanelPricipal.revalidate();
-        PanelPricipal.repaint();
+        easy p = new easy();// Crea una instancia de la clase "easy"
+        PanelPricipal.removeAll();// Limpia el contenido anterior del panel principal
+        PanelPricipal.add(p, BorderLayout.CENTER);// Agrega el nuevo contenido al centro
+        PanelPricipal.revalidate();// Actualiza la interfaz gráfica
+        PanelPricipal.repaint();// Redibuja el contenido
     }
-    
+    // Método estático para configurar el nivel normal  
     static void nivelNormal() {
-        normal p = new normal();
-        PanelPricipal.removeAll();
-        PanelPricipal.add(p, BorderLayout.CENTER);
-        PanelPricipal.revalidate();
-        PanelPricipal.repaint();
+        normal p = new normal();// Crea una instancia de la clase "normal"
+        PanelPricipal.removeAll();// Limpia el contenido anterior del panel principal
+        PanelPricipal.add(p, BorderLayout.CENTER);// Agrega el nuevo contenido al centro
+        PanelPricipal.revalidate();// Actualiza la interfaz gráfica
+        PanelPricipal.repaint();// Redibuja el contenido
     }
+    // Método estático para configurar el nivel difícil
     static void nivelDificil() {
-        dificil p = new dificil();
-        PanelPricipal.removeAll();
-        PanelPricipal.add(p, BorderLayout.CENTER);
-        PanelPricipal.revalidate();
-        PanelPricipal.repaint();
+        dificil p = new dificil();// Método estático para configurar el nivel difícil
+        PanelPricipal.removeAll();// Limpia el contenido anterior del panel principal
+        PanelPricipal.add(p, BorderLayout.CENTER);// Agrega el nuevo contenido al centro
+        PanelPricipal.revalidate();// Actualiza la interfaz gráfica
+        PanelPricipal.repaint();// Redibuja el contenido
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        // Panel principal donde se mostrarán los niveles
         PanelPricipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -62,17 +70,17 @@ public class Inicio extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(600, 600));
         getContentPane().setLayout(null);
 
-        PanelPricipal.setBackground(new java.awt.Color(255, 255, 255));
+        PanelPricipal.setBackground(new java.awt.Color(255, 255, 255)); // Color blanco de fondo
         PanelPricipal.setAlignmentX(0.0F);
         PanelPricipal.setAlignmentY(0.0F);
         PanelPricipal.setInheritsPopupMenu(true);
         getContentPane().add(PanelPricipal);
-        PanelPricipal.setBounds(0, -10, 600, 560);
+        PanelPricipal.setBounds(0, -10, 600, 560);  // Color blanco de fondo
         PanelPricipal.setBackground(new Color(0, 0, 0, 0));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoInicio.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 600, 600);
+        jLabel1.setBounds(0, 0, 600, 600);// Ubicación y tamaño del fondo
         jLabel1.getAccessibleContext().setAccessibleName("FondoInicio");
         jLabel1.getAccessibleContext().setAccessibleDescription("Fondo de Pantalla de inicio");
 
@@ -84,10 +92,10 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(jMenu2);
-
+        
         jMenu1.setText("Niveles");
         jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
+        // Opciones dentro del menú "Niveles"
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconKing1.png"))); // NOI18N
         jMenuItem1.setText("Fácil");
         jMenuItem1.setActionCommand("Facil");
@@ -122,7 +130,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMenuBar1); // Opciones dentro del menú "Niveles"
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
